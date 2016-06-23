@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="@color/pop_win_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="底部弹出" />
+
+        <Button
+            android:id="@+id/btn_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="顶部弹出" />
+
+        <Button
+            android:id="@+id/btn_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中间弹出" />
+
+        <Button
+            android:id="@+id/btn_anchor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="依赖于锚点弹出" />
+
+        <Button
+            android:id="@+id/btn_anchor_offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="依赖于锚点并偏移弹出" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
