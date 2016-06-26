@@ -12,6 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
+/**
+ *@description 
+ *@author Zhebao Xu
+ *created at 6/24/16 1:03 PM 
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btn_bottom,btn_top,btn_center,btn_anchor,btn_anchor_offset;
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+
     private void initEvents(){
         btn_bottom.setOnClickListener(this);
         btn_top.setOnClickListener(this);
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_anchor.setOnClickListener(this);
         btn_anchor_offset.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View view) {
