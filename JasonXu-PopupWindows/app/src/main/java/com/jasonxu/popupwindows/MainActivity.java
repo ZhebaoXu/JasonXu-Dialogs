@@ -3,6 +3,7 @@ package com.jasonxu.popupwindows;
 import android.annotation.TargetApi;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import android.widget.PopupWindow;
  *created at 6/24/16 1:03 PM 
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
 
     Button btn_bottom,btn_top,btn_center,btn_anchor,btn_anchor_offset;
     @Override
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showTopDialog();
                 break;
             case R.id.btn_center:
-                showCentreDialog();
+                showCentreDialog(0);
                 break;
             case R.id.btn_anchor:
                 showAnchorDialog();
@@ -111,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         topDialog.showAtLocation(rootView,Gravity.TOP,0,0);
     }
 
-    private void showCentreDialog(){
+    private void showCentreDialog(@LayoutRes  int id){
 
         View contentView = LayoutInflater.from(this).inflate(R.layout.centre,null);
         final PopupWindow topDialog = new PopupWindow(contentView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
@@ -132,8 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showBottomDialog(){
         final PopupWindow bottomDialog = new PopupWindow(this);
         View contentView = LayoutInflater.from(this).inflate(R.layout.bottom,null);
-        bottomDialog.setContentView(contentView);
-        bottomDialog.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        bottomDialog.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         bottomDialog.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 //        bottomDialog.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         bottomDialog.setContentView(contentView);
@@ -151,8 +152,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomDialog.setAnimationStyle(R.style.pop_up_animation);
         //使用showAtLocation
         //1.根视图
-//        View rootView = LayoutInflater.from(this).inflate(R.layout.activity_main,null);
-        View rootView = (this.findViewById(android.R.id.content)).getRootView();
+        View rootView = LayoutInflater.from(this).inflate(R.layout.activity_main,null);
+//        View rootView = (this.findViewById(android.R.id.content)).getRootView();
         bottomDialog.showAtLocation(rootView, Gravity.BOTTOM,0,0);
     }
 }
